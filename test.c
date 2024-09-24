@@ -12,5 +12,6 @@ int main()
     dummyFunction(TEST_MACRO);
     printf("This is a dummy line.");
     printf("Faulty formatting");
-    printf("No formatting needed")
+    printf("No formatting needed");
+    printf("Testing formatting with UI");
 }
