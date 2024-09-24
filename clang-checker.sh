@@ -3,8 +3,13 @@
 # Fetch the latest changes from the remote to ensure we are comparing against the latest main branch
 git fetch origin main
 
-# Find all files that differ from the main branch HEAD
-FILES=$(git diff --name-only --diff-filter=ACM origin/main...HEAD | grep -E '\.(c|cpp|h|hpp)$')
+# Check if there is a common ancestor between HEAD and main
+if ! git merge-base --is-ancestor origin/main HEAD; then
+    echo "No common ancestor found between the current branch and main. Assuming this is a new branch."
+    FILES=$(git diff --name-only --diff-filter=ACM origin/main | grep -E '\.(c|cpp|h|hpp)$')
+else
+    FILES=$(git diff --name-only --diff-filter=ACM origin/main...HEAD | grep -E '\.(c|cpp|h|hpp)$')
+fi
 
 if [ -n "$FILES" ]; then
     echo "Running clang-format on the following files:"
