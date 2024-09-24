@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Finds all staged .c, .h, .cpp, .hpp files and runs clang-format on them
-FILES=$(git diff --name-only --diff-filter=ACM | grep -E '\.(c|cpp|h|hpp)$')
+# Fetch the latest changes from the remote to ensure we are comparing against the latest main branch
+git fetch origin main
+
+# Find all files that differ from the main branch HEAD
+FILES=$(git diff --name-only --diff-filter=ACM origin/main...HEAD | grep -E '\.(c|cpp|h|hpp)$')
 
 if [ -n "$FILES" ]; then
     echo "Running clang-format on the following files:"
