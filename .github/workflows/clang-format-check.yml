@@ -33,4 +33,4 @@ jobs:
 
     # Step 6: Run the clang-checker.sh script
     - name: Run clang-checker.sh
-      run: ./clang-checker.sh
+      run: bash ./clang-checker.sh
