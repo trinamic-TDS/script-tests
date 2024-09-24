@@ -19,10 +19,18 @@ jobs:
     - name: Install clang-format
       run: sudo apt-get install clang-format -y
 
-    # Step 3: Make clang-checker.sh executable
+    # Step 3: Check file permissions
+    - name: List files and permissions
+      run: ls -l
+
+    # Step 4: Make clang-checker.sh executable
     - name: Make clang-checker.sh executable
       run: chmod +x ./clang-checker.sh
 
-    # Step 4: Run the clang-checker.sh script
+    # Step 5: Verify permissions again
+    - name: Verify permissions
+      run: ls -l ./clang-checker.sh
+
+    # Step 6: Run the clang-checker.sh script
     - name: Run clang-checker.sh
       run: ./clang-checker.sh
