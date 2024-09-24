@@ -3,8 +3,12 @@
 #define TEST_MACRO
 
 void dummyFunction(int);
+void faultyFormatFunction();
 
 void dummyFunction(int dummyVariable) { printf("This is the input: %d\n", dummyVariable); }
+void faultyFormatFunction(){
+int dummyTask = 10;
+}
 
 int main()
 {
