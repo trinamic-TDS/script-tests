@@ -21,8 +21,8 @@ jobs:
 
     # Step 3: Make clang-checker.sh executable
     - name: Make clang-checker.sh executable
-      run: chmod +x ./clang-checker.sh
+      run: sudo chmod +x ./clang-checker.sh
 
     # Step 4: Run the clang-checker.sh script
     - name: Run clang-checker.sh
-      run: ./clang-checker.sh
+      run: sudo ./clang-checker.sh
