@@ -12,4 +12,5 @@ int main (){
     // Make the dummy call
     dummyFunction(TEST_MACRO);
     printf("This is a dummy line.");
+printf("Faulty formatting");
 }
