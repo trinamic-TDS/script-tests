@@ -1,0 +1,24 @@
+name: clang-format Check
+
+# Trigger this workflow on pull requests to the repository
+on:
+  pull_request:
+    branches:
+      - main  # Adjust as needed for other branches
+
+jobs:
+  clang-format:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Install clang-format
+    - name: Install clang-format
+      run: sudo apt-get install clang-format -y
+
+    # Step 3: Run the clang-checker.sh script
+    - name: Run clang-checker.sh
+      run: ./clang-checker.sh
