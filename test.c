@@ -6,9 +6,7 @@ void dummyFunction(int);
 void faultyFormatFunction();
 
 void dummyFunction(int dummyVariable) { printf("This is the input: %d\n", dummyVariable); }
-void faultyFormatFunction(){
-int dummyTask = 10;
-}
+void faultyFormatFunction() { int dummyTask = 10; }
 
 int main()
 {
@@ -18,5 +16,5 @@ int main()
     printf("Faulty formatting");
     printf("No formatting needed");
     printf("Testing formatting with UI");
-printf("This is a faulty formatted line on a branch");
+    printf("This is a faulty formatted line on a branch");
 }
