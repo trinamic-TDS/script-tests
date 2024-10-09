@@ -17,4 +17,5 @@ int main()
     printf("No formatting needed");
     printf("Testing formatting with UI");
     printf("This is a faulty formatted line on a branch");
+    printf("new line");
 }
